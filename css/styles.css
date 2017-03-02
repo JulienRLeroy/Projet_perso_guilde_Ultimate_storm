@@ -1,0 +1,234 @@
+html, body {
+    height: 100%;
+}
+
+body {
+	position: relative;
+	background-attachment: fixed;
+	padding: 0;
+	margin: 0;
+	background:url(../css/img/background.jpg) fixed no-repeat;
+	background-position: top center;
+	background-size: cover; /* version standardisée */
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+}
+
+header {
+	width: 100%;
+	background-size: cover;
+	background-color: #141414;
+	margin-bottom: 18%;
+	padding-top: 8px;
+	box-shadow: 0px 0px 12px  #82FC82; 
+}
+
+header ul li {
+	display: inline;
+	list-style: none;
+	text-align: center;
+}
+
+header a, a:visited {
+	border-bottom: 3px solid transparent;
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+}
+
+header a:hover {
+	text-decoration: none;
+	color: green;
+}
+
+::-webkit-input-placeholder {
+	color: green;
+}
+
+:-moz-placeholder {
+	color: green;
+}
+
+::-moz-placeholder {
+	color: green;
+}
+
+:-ms-placeholder {
+	color: green;
+}
+
+/* Autres classes */
+
+.droite {
+	text-align: right;
+	float: right;
+}
+
+.gauche {
+	text-align: left;
+}
+
+.milieu {
+	text-align: center;
+}
+
+/* Début Général */
+
+.cadre_general {
+	background-color: #141414;
+	padding: 30px;
+	text-align: center;
+	color: black;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border: 1px solid green;
+	margin-bottom: 20px;
+	box-shadow: 0px 0px 10px  green; 
+	height: auto;
+}
+
+.cadre_left {
+	text-align: left;
+	padding: 5px;
+	margin-bottom: 40px;
+}
+
+.cadre_right {
+	text-align: right;
+	padding: 5px;
+}
+
+.video {
+	border: 1px solid #B4F56B;
+	width: 100%;
+	height: 345px;
+}
+
+.video_bulle {
+	margin-bottom: 20px;
+}
+.video_bouton {
+	margin-top: 20px;
+	margin-bottom: 0px;
+}
+
+/*/ PAGE CANDIDATURE /*/
+
+.input_candidature {
+	margin-bottom: 3px;
+	border: none;
+}
+
+.condition {
+	font-size: 12px;
+	border: 1px solid white;
+	padding: 5px;
+	text-align: left;
+	color: white;
+	margin-bottom: 20px;
+}
+
+.input_send_candidature {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.calendrier_dispo {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.decoration  {
+	box-shadow: 0px 0px 10px lightgreen; 
+}
+
+.calendrier_dispo table td {
+	padding: 5px;
+	color: white;
+	font-size: 20px;
+	text-align: center;
+}
+.calendrier_dispo table th {
+	padding: 5px;
+	font-size: 20px;
+	color: white;
+	text-align: center;
+}
+
+.calendrier_dispo p {
+	font-size: 36px;
+	margin-left: -10px;
+	margin-right: -10px;
+	transform: rotate(-10deg);
+	color: black;
+	text-shadow: 0px 0px 5px lightgreen;
+}
+
+/*/ PAGE ROSTER /*/
+
+.roster_cadre {
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+#A1 {
+	display: none;
+}
+
+#B1 {
+	display: none;
+}
+
+.B1:hover {
+	background-color: #C5BE27;
+}
+
+.A1:hover  {
+	background-color: #C57927;
+}
+
+.Select_A1_B1 {
+	top: 0px;
+	color: white;
+	margin-bottom: 10px;
+	padding: 15px;
+}
+
+.Select_A1_B1 h3 {
+	font-size: 20px;
+}
+
+.inscription_roster, select {
+	color: green;
+	border: none;
+	outline: none;
+}
+
+.titre_roster {
+	border: 1px solid #B4F56B;
+	margin-bottom: 20px;
+	color: white;
+}
+
+.forma_roster {
+	border-top: 1px solid #B4F56B; 
+	border-left: 1px solid #B4F56B;
+	border-right: 1px solid #B4F56B;
+}
+
+.roster_tank {
+	padding: 10px;
+	color: white;
+}
+
+.roster_heal {
+	padding: 10px;
+	color: white;
+}
+
+.roster_dps {
+	padding:10px;
+	color: white;
+	border-bottom: 1px solid #B4F56B;
+}
