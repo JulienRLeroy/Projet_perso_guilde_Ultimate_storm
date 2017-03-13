@@ -26,7 +26,7 @@
 			{
 					$_SESSION['admin'] = 1;
 			} 
-			header('location: index.php');	
+			header('location: ./');	
 		} 
 		else 
 		{

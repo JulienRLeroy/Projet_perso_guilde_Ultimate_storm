@@ -1,3 +1,9 @@
+<?php include('config/db.php'); session_start();  
+		if(isset($_SESSION['id'])) {
+		header('location: ./');
+	} 
+?>
+
 <form method="post" action="?p=candidature" >
 		<div class="condition">
 			Pour tout recrutement, il est nécéssaire d'envoyer une candidature, ou de devoir contacter une personne adapté pour l'invitation​
