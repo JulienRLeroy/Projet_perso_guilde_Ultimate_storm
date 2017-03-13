@@ -1,4 +1,9 @@
-﻿
+﻿<?php 
+if(!isset($_SESSION['id'])) 
+{
+	header('location: ./');
+} 
+?>
 	<div id="Action_A1" class="col-md-6 Select_A1_B1 A1">
 		<h3>Selectionnez A1</h3>
 	</div>

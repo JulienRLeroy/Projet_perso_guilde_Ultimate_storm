@@ -1,0 +1,63 @@
+/* Index */
+
+.header_admin {
+	width: 100%;
+	background-size: cover;
+	background-color: #141414;
+	margin-bottom: 18%;
+	padding-top: 8px;
+	box-shadow: 0px 0px 12px  #82FC82; 
+	text-align: center;
+	color: white;
+}
+
+.nav_admin {
+	color: black;
+	height:40px;
+	line-height:40px;
+	background-color: #141414;
+	box-shadow: 0px 0px 12px  #82FC82; 
+	margin-bottom: 10px;
+}
+
+.nav_admin ul li , a, a:visited {
+	text-align: center;
+	display: inline;
+	font-size: 30px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.nav_admin  a:hover {
+	color: green;
+	text-decoration: none;
+}
+
+.contenu_admin {
+	color: white;
+	background-color: #141414;
+	height: auto;
+	padding: 20px;
+}
+
+.contenu_admin h2 {
+		text-align: center;
+		cursor: pointer;
+}
+
+/* Page Candidature */
+
+.link_candidature {
+	padding: 20px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	min-height: 500px;
+	font-size: 25px;
+}
+
+.link_candidature ol li {
+	margin-bottom: 5px; 
+	border: 1px solid white;
+	padding: 5px;
+}
+
