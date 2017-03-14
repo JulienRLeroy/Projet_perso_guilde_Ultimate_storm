@@ -1,7 +1,12 @@
 <?php include('config/db.php'); session_start();  
-		if(isset($_SESSION['id'])) {
-		header('location: ./');
-	} 
+		if(isset($_SESSION['id'])) 
+		{
+			header('location: ./');
+		} 
+		if(isset($_SESSION['captcha'])) 
+		{
+			$captcha = $_SESSION['captcha'];
+		}
 ?>
 
 <form method="post" action="?p=candidature" >
@@ -107,44 +112,79 @@
 	<div class="col-md-12">
 			<textarea class="col-md-12 decoration" placeholder="Décrivez-vous" name="com" style="margin-top: 5px; resize: none; height: 150px;" ></textarea>
 	</div>
-	
+	<div class="col-md-12 input_send_candidature" style="color: white;">
+		Combien font <?php echo Captcha(); ?> 
+		<input style="color: green;" type="text" name="captcha" placeholder="Votre réponse ?">
+	</div>
 	<div class="col-md-12 input_send_candidature">
 		<input class="input_candidature decoration" type="submit" name="submit" value="Envoyer la candidature" >
 	</div>
+	
 </form>
 <?php
 if (isset($_POST['submit']))
 {  
-    $prenom = stripcslashes($_POST['prenom']);
-    $age = stripcslashes($_POST['age']);
-    $pseudonyme = stripcslashes($_POST['pseudonyme']);
-	$classe = stripcslashes($_POST['classe']);
-	$ilvl = stripcslashes($_POST['ilvl']);
-	$com = stripcslashes($_POST['com']);
-	$spe1 = stripcslashes($_POST['spe1']);
-	$spe2 = stripcslashes($_POST['spe2']);
-	$spe3 = stripcslashes($_POST['spe3']);
-	$email = stripcslashes($_POST['email']);
-	$jours1 = stripcslashes($_POST['jours1']);
-	$jours2 = stripcslashes($_POST['jours2']);
-	$jours3	= stripcslashes($_POST['jours3']);
+    $prenom = stripcslashes($DB->quote($_POST['prenom']));
+    $age = stripcslashes($DB->quote($_POST['age']));
+    $pseudonyme = stripcslashes($DB->quote($_POST['pseudonyme']));
+	$classe = stripcslashes($DB->quote($_POST['classe']));
+	$ilvl = stripcslashes($DB->quote($_POST['ilvl']));
+	$com = stripcslashes($DB->quote($_POST['com']));
+	$spe1 = stripcslashes($DB->quote($_POST['spe1']));
+	$spe2 = stripcslashes($DB->quote($_POST['spe2']));
+	$spe3 = stripcslashes($DB->quote($_POST['spe3']));
+	$email = stripcslashes($DB->quote($_POST['email']));
+	$jours1 = stripcslashes($DB->quote($_POST['jours1']));
+	$jours2 = stripcslashes($DB->quote($_POST['jours2']));
+	$jours3	= stripcslashes($DB->quote($_POST['jours3']));
+	$captchaUsers = $_POST['captcha'];
 	
-	if(empty($prenom) || empty($age) || empty($pseudonyme) || empty($classe) || empty($ilvl) || empty($com) || empty($email) || (empty($spe1) && empty($spe2) && empty($spe3)) || (empty($jours1) && empty($jours2) && empty($jours3))) {
+	
+	if(empty($_POST['prenom']) || empty($_POST['age']) || empty($_POST['pseudonyme']) || empty($_POST['classe']) || empty($_POST['ilvl']) || empty($_POST['com']) || empty($_POST['email'])) {
 		
+			echo"<div class='col-md-12'>";
+			echo"Vous n'avez pas remplis les informations";
+			echo"</div>";
+			
+	} 
+	else if(empty($_POST['jours1']) && empty($_POST['jours2']) && empty($_POST['jours3'])) 
+	{
+			echo"<div class='col-md-12'>";
+			echo "Veuillez signaler vos jours de raids";
+			echo"</div>";
+		
+	}
+	else if ((empty($_POST['spe1']) && empty($_POST['spe2']) && empty($_POST['spe3'])))
+	{
+			echo"<div class='col-md-12'>";
+			echo" Vous n'avez pas choisis une spécialisation";
+			echo"</div>";
+	}
+	else if ($captchaUsers != $captcha)
+	{
+			echo"<div class='col-md-12'>";
+			echo "Vous n'avez pas valider le captcha";
+			echo"</div>";
 		
 	}
 	else {
-		$req = $DB->query("INSERT INTO candidature SET prenom='$prenom', age='$age', pseudonyme='$pseudonyme', classe='$classe', ilvl='$ilvl', com='$com', spe1='$spe1', spe2='$spe2',spe3='$spe3', email='$email', jours1='$jours1', jours2='$jours2',jours3='$jours3',  status='1'");
+		$req = $DB->query("INSERT INTO candidature SET prenom=$prenom, age=$age, pseudonyme=$pseudonyme, classe=$classe, ilvl=$ilvl, com=$com, spe1=$spe1, spe2=$spe2 ,spe3=$spe3, email=$email, jours1=$jours1, jours2=$jours2,jours3=$jours3,  status='1'");
+		
+			echo"<div class='col-md-12'>";
+			echo " candidature envoyée ";
+			echo"</div>";
+		
 	}
 }
 
-// $sql = sprintf("INSERT INTO candidature SET prenom='%s', age=%d, pseudonyme='%s', classe='%s', ilvl='%d', com='%s', spe1='%s' ,spe2='%s', spe3='%s'",$prenom,$age,$pseudonyme,$classe,$ilvl,$com,$sp1,$spe2,$spe3 );
-		// $res = $DB->query($sql);
-		// if($res->row_count() < 1) {
-			// echo "candidature envoyée";			
-		// }
-		// else {
-			// echo "un problème est survenu";
-		// }  or die(print_r($DB->errorInfo(), true));
-		// quote, il y a un bug que je n'arrive pas à résoudre
+function Captcha()
+{
+	$captcha = rand(1,50);
+	$captcha2 = rand(1,10);
+	$total = $captcha + $captcha2;
+	
+	$_SESSION['captcha'] = $total;
+	return $captcha. "+" . $captcha2." : "; 
+}
+
 ?>

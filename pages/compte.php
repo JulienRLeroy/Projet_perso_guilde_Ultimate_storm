@@ -6,18 +6,7 @@ if(!isset($_SESSION['id']))
 ?>
 
 <form method="post" action="">
-	<div class="col-md-4">
-		<label>
-			<h3>Mot de passe</h3>
-		</label>
-		<p>
-			<input type="password" placeholder="Nouveau mot de passe">
-		</p>
-		<p>
-			<input type="password" placeholder="Répétez">
-		</p>
-	</div>
-	<div class="col-md-4">
+	<div class="col-md-6">
 		<label>
 			<h3>Email</h3>
 		</label>
@@ -28,10 +17,11 @@ if(!isset($_SESSION['id']))
 			<input type="email" placeholder="Changer l'email">
 		</p>
 	</div>
-	<div class="col-md-4">
+	<div class="col-md-6">
 		<label>
-			<h3>Avatar</h3>
+			<h3>Informations In Game</h3>
 		</label>
+		
 	</div>
 	<div class="col-md-12">
 		<input type="submit" value="Modifier les paramètres de compte">
