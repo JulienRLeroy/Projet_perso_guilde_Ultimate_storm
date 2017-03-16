@@ -1,6 +1,6 @@
 <?php include('config/db.php'); session_start();  
 		if(!isset($_SESSION['admin'])) {
-		header('location: index.php');
+		header('location: ./');
 	} 
 ?>
 <!DOCTYPE HTML>
@@ -22,9 +22,9 @@
 				<li class="col-md-2"><a href="admin.php">Home</a></li>
 				<li class="col-md-2"><a href="?a=candidature">Candidature</a></li>
 				<li class="col-md-2"><a href="?a=membres">Membres</a></li>
-				<li class="col-md-2"><a href="?a=candidature">Roster</a></li>
-				<li class="col-md-2"><a href="admin.php">Souvenirs</a></li>
-				<li class="col-md-2"><a href="admin.php">Souvenirs</a></li>
+				<li class="col-md-2"><a href="?a=roster">Roster</a></li>
+				<li class="col-md-2"><a href="?a=souvenirs">Souvenirs</a></li>
+				<li class="col-md-2"><a href="?a=news">News</a></li>
 			</ul>
 		</div>
 		

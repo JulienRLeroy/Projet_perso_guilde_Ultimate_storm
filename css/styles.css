@@ -113,6 +113,33 @@ header a:hover {
 	margin-bottom: 0px;
 }
 
+.news {
+	border: 1px solid white;
+	margin-top: 20px;
+	padding: 5px;
+	color: white;
+}
+
+.titre_news {
+	padding: 5px;
+	border-bottom: 1px solid white;
+}
+
+.auteur_news {
+	padding: 5px;
+	border-bottom: 1px solid white;
+}
+
+.message_news {
+	padding: 5px;
+	height: auto;
+}
+
+.date_news {
+	border-top: 1px solid white;
+	padding: 5px;
+}
+
 /*/ PAGE CANDIDATURE /*/
 
 .input_candidature {

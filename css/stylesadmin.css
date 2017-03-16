@@ -61,3 +61,40 @@
 	padding: 5px;
 }
 
+/* Page news */
+
+.add_news {
+	height: auto;
+}
+
+.old_news {
+	height: auto;
+}
+
+.news_left {
+	height: 100px;
+}
+
+.news_right {
+	height: 100px;
+}
+
+.news_right textarea {
+	height: 100px;
+	resize: none;
+}
+
+.center {
+	margin-top: 10px;	
+	text-align: center;
+}
+
+.left {
+	margin-top: 10px;	
+	text-align: right;
+}
+
+.right {
+	margin-top: 10px;	
+	text-align: right;
+}

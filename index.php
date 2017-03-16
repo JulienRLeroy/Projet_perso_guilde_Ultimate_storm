@@ -20,15 +20,21 @@
 			<ul class="col-md-12">
 					<li class="col-md-2"> <a href="./">Home</a></li>
 					<li class="col-md-2"> <a href="http://eu.battle.net/wow/fr/guild/hyjal/Ultimate%20St%C3%B8rm/" target="_blanc">Guilde</a></li>
-					<li class="col-md-2"> <a href="?p=candidature">Candidature</a></li>
+					
 				<?php if(!isset($_SESSION['id'])) { ?>
+					<li class="col-md-2"> <a href="?p=candidature">Candidature</a></li>
 					<li class="col-md-2"> <a href="?p=connexion">Connexion</a></li>
 				
 				<?php  } else { ?>
 					<li class="col-md-2"><a href="?p=compte">Compte</a></li>
 					<li class="col-md-2"> <a href="?p=roster">Rosters</a> 
 					<li class="col-md-2"> <a href="?p=souvenirs">Souvenirs</a></li>
-				<?php  } ?>
+				<?php if((isset($_SESSION['admin']))) 
+					{
+					
+						echo"<li class='col-md-2'> <a href='admin.php'>Admin</a></li>";
+					}
+				  } ?>
 			</ul>	
 		</header>
 		
@@ -47,6 +53,7 @@
 					else
 						{
 							include("module/video.php");
+							include("module/news.php");
 						}  
 					
 				?>
