@@ -20,9 +20,7 @@ function CheckCandidature()
 					<p>Age : ".$afficher_candidature["age"]."</p>
 					<p>Ilvl : ".$afficher_candidature["ilvl"]."</p>
 					<p>Commentaire : ".$afficher_candidature["com"]."</p>
-					<p>Jours 1 :  ".$afficher_candidature["jours1"]."</p>
-					<p>Jours 2 :  ".$afficher_candidature["jours2"]."</p>
-					<p>Jours 3 :  ".$afficher_candidature["jours3"]."</p>
+					<p>Jours  :  ".$afficher_candidature["jours"]."</p>
 			</p>
 				</li>
 				<form method='post'> 

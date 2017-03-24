@@ -83,7 +83,7 @@
 		<table class="col-md-12">
 			<tr>
 				
-				<th><input type="checkbox" name="jours1" value="Vendredi Samedi" name="jour1" ></th>
+				<th><input type="checkbox" name="jours1" value="4" name="jour1" ></th>
 				<td>Vendredi</td>
 				<td>
 					<p>&</p>
@@ -91,7 +91,7 @@
 				<td>Samedi</td>
 			</tr>
 			<tr>
-				<th><input type="checkbox" name="jours2" value="Lundi Mercredi" name="jour2" ></th>
+				<th><input type="checkbox" name="jours2" value="2" name="jour2" ></th>
 				<td>Lundi</td>
 				<td>
 					<p>&</p>
@@ -99,7 +99,7 @@
 				<td>Mercredi</td>
 			</tr>
 			<tr>
-				<th><input type="checkbox" name="jours3" value="Mardi Jeudi" name="jour3" ></th>
+				<th><input type="checkbox" name="jours3" value="1" name="jour3" ></th>
 				<td>Mardi</td>
 				<td>
 					<p>&</p>
@@ -134,44 +134,44 @@ if (isset($_POST['submit']))
 	$spe2 = stripcslashes($DB->quote($_POST['spe2']));
 	$spe3 = stripcslashes($DB->quote($_POST['spe3']));
 	$email = stripcslashes($DB->quote($_POST['email']));
-	$jours1 = stripcslashes($DB->quote($_POST['jours1']));
-	$jours2 = stripcslashes($DB->quote($_POST['jours2']));
-	$jours3	= stripcslashes($DB->quote($_POST['jours3']));
+	$jours = stripcslashes($DB->quote($_POST['jours1'] + $_POST['jours2'] + $_POST['jours3']));
+
+	
 	$captchaUsers = $_POST['captcha'];
 	
 	
 	if(empty($_POST['prenom']) || empty($_POST['age']) || empty($_POST['pseudonyme']) || empty($_POST['classe']) || empty($_POST['ilvl']) || empty($_POST['com']) || empty($_POST['email'])) {
 		
-			echo"<div class='col-md-12'>";
+			echo"<div class='col-md-12' style='color:white;'>";
 			echo"Vous n'avez pas remplis les informations";
 			echo"</div>";
 			
 	} 
 	else if(empty($_POST['jours1']) && empty($_POST['jours2']) && empty($_POST['jours3'])) 
 	{
-			echo"<div class='col-md-12'>";
+			echo"<div class='col-md-12' style='color:white;'>";
 			echo "Veuillez signaler vos jours de raids";
 			echo"</div>";
 		
 	}
 	else if ((empty($_POST['spe1']) && empty($_POST['spe2']) && empty($_POST['spe3'])))
 	{
-			echo"<div class='col-md-12'>";
+			echo"<div class='col-md-12' style='color:white;'>";
 			echo" Vous n'avez pas choisis une spécialisation";
 			echo"</div>";
 	}
 	else if ($captchaUsers != $captcha)
 	{
-			echo"<div class='col-md-12'>";
+			echo"<div class='col-md-12' style='color:white;'>";
 			echo "Vous n'avez pas valider le captcha";
 			echo"</div>";
 		
 	}
 	else {
-		$req = $DB->query("INSERT INTO candidature SET prenom=$prenom, age=$age, pseudonyme=$pseudonyme, classe=$classe, ilvl=$ilvl, com=$com, spe1=$spe1, spe2=$spe2 ,spe3=$spe3, email=$email, jours1=$jours1, jours2=$jours2,jours3=$jours3,  status='1'");
+		$req = $DB->query("INSERT INTO candidature SET prenom=$prenom, age=$age, pseudonyme=$pseudonyme, classe=$classe, ilvl=$ilvl, com=$com, spe1=$spe1, spe2=$spe2 ,spe3=$spe3, email=$email, jours=$jours, status='1'");
 		
-			echo"<div class='col-md-12'>";
-			echo " candidature envoyée ";
+			echo"<div class='col-md-12' style='color:white;'>";
+			echo "Candidature envoyée";
 			echo"</div>";
 		
 	}

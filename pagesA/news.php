@@ -1,13 +1,18 @@
 <?php include('config/db.php'); ?>
 <form method="post">
 	<div class="col-md-12 add_news">
-		<div class="col-md-6 news_left center">
-			<input type="text" name="titre" placeholder="Titre de la news">
-			<input type="text" name="auteur" placeholder="Auteur de la news">
+		<div class="col-md-12 news_left center">
+			<div class="row">
+				<input type="text" name="titre" placeholder="Titre de la news">
+				<input type="text" name="auteur" placeholder="Auteur de la news">
+			</div>
+			<div class="row center news_right">
+				<div class="container">
+					<textarea class="col-md-12" name="commentaire" placeholder="Ecrivez la news" ></textarea> 
+				</div>
+			</div>
 		</div>
-		<div class="col-md-6 news_right center">
-			<textarea  class="col-md-12" name="commentaire" placeholder="Ecrivez la news" ></textarea> 
-		</div>
+
 
 		<div class="col-md-12 right">
 			<input type="submit" name="submit" value="Envoyer la news">

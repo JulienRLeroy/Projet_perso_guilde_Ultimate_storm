@@ -58,6 +58,7 @@ header a:hover {
 	color: green;
 }
 
+
 /* Autres classes */
 
 .droite {
@@ -114,30 +115,43 @@ header a:hover {
 }
 
 .news {
-	border: 1px solid white;
+	/* border: 1px solid white; */
 	margin-top: 20px;
 	padding: 5px;
 	color: white;
+	display: inline;
+	height: 300px;
 }
 
 .titre_news {
 	padding: 5px;
-	border-bottom: 1px solid white;
+	border-left: none;
+	font-weight: bold;
 }
 
 .auteur_news {
 	padding: 5px;
-	border-bottom: 1px solid white;
+	border-top-left-radius: 100%;
+	background-size: cover;
 }
 
 .message_news {
-	padding: 5px;
-	height: auto;
+	padding: 10px;
+	height: 200px;
+	border: 1px solid white;
+	overflow: scroll;
+}
+
+.message_news:hover {
+	overflow: scroll;
+}
+
+.message_news::-webkit-scrollbar {									/* Scrollbars */
+	display: none;
 }
 
 .date_news {
-	border-top: 1px solid white;
-	padding: 5px;
+	padding: 10px;
 }
 
 /*/ PAGE CANDIDATURE /*/

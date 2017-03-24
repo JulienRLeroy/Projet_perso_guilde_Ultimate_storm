@@ -1,4 +1,6 @@
-﻿<form method="post">
+﻿<div class="condition">Afin de vous connectez, votre candidature doit avoir été accepté</div>
+
+<form method="post">
 	<input type="text" placeholder="Pseudonyme" name="pseudonyme"><br />
 	<input type="email" placeholder="Votre email" name="email"><br /><br />
 	<input type="submit" name="submitconnexion" value="Connexion">
