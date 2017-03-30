@@ -1,4 +1,8 @@
-<?php include('config/db.php'); ?>
+<?php include('config/db.php'); 
+if(isset($_POST['submitmodifier'])) {
+	echo"cc";	
+}
+?>
 <form method="post">
 	<div class="col-md-12 add_news">
 		<div class="col-md-12 news_left center">
@@ -21,12 +25,16 @@
 </form>
 
 
+
+
+
 <?php 
 if (isset($_POST['submit']))
 {  
-    $titre = stripcslashes($DB->quote($_POST['titre']));
-    $auteur = stripcslashes($DB->quote($_POST['auteur']));
-	$commentaire = stripcslashes($DB->quote($_POST['commentaire']));
+    $titre = htmlentities($DB->quote($_POST['titre']));
+    $auteur = htmlentities($DB->quote($_POST['auteur']));
+	$commentaire = htmlentities($DB->quote($_POST['commentaire']));
+	$date_news = date("d/m/y");
 
 	
 	
@@ -44,12 +52,24 @@ if (isset($_POST['submit']))
 		echo "Vous n'avez pas mis de commentaires";
 	}
 	else {
-		$req = $DB->query("INSERT INTO news SET titre=$titre, auteur=$auteur, message=$commentaire");
+		$req = $DB->query("INSERT INTO news SET titre=$titre, auteur=$auteur, message=$commentaire, date='$date_news'");
 		
 			echo "News Envoyée";
 		
 	}
 }
+
+// function AfficheNews($DB) {
+	// $req = $DB->query("SELECT * FROM news order by id DESC limit 6");
+		// echo '<form method="post"><select>';
+		// while($afficher_news = $req->fetch())
+		// {
+			// echo '<option value="'.$afficher_news['id'].'">'.$afficher_news["titre"].'</option>';
+		// }
+		// echo'<input type="submit" value="modifier" name="submitmodifier">';
+		// echo '</select></form>'; 
+//  AfficheNews($DB);
+// }
 
 
 

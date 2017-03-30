@@ -84,27 +84,31 @@
 			<tr>
 				
 				<th><input type="checkbox" name="jours1" value="4" name="jour1" ></th>
-				<td>Vendredi</td>
-				<td>
-					<p>&</p>
-				</td>
-				<td>Samedi</td>
-			</tr>
-			<tr>
-				<th><input type="checkbox" name="jours2" value="2" name="jour2" ></th>
 				<td>Lundi</td>
 				<td>
 					<p>&</p>
 				</td>
 				<td>Mercredi</td>
+				
 			</tr>
 			<tr>
-				<th><input type="checkbox" name="jours3" value="1" name="jour3" ></th>
+				<th><input type="checkbox" name="jours2" value="2" name="jour2" ></th>
 				<td>Mardi</td>
 				<td>
 					<p>&</p>
 				</td>
 				<td>Jeudi</td>
+				
+			</tr>
+			<tr>
+				<th><input type="checkbox" name="jours3" value="1" name="jour3" ></th>
+				
+				
+				<td>Vendredi</td>
+				<td>
+					<p>&</p>
+				</td>
+				<td>Samedi</td>
 			</tr>
 		</table>
 	</div>

@@ -11,7 +11,7 @@
 		<div id="video" class="carousel slide video" data-ride="carousel">
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">	
-					<iframe id="video1" class="video" width="460" height="345" src="https://www.youtube.com/embed/DAuye-0Z_bY" frameborder="0" allowfullscreen></iframe>
+					<iframe id="video1" class="video" width="460" height="345" src="https://www.youtube.com/embed/DAuye-0Z_bY?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>
 				</div> 
 			</div>
 		</div>

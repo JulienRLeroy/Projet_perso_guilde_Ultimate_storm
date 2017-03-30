@@ -10,3 +10,9 @@ $(document).ready(function(){
     });
 });
 
+$(document).ready(function(){
+    $("#Action_C1").click(function(){
+        $("#C1").toggle();
+    });
+});
+

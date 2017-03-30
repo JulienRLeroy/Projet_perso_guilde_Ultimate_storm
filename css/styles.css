@@ -221,22 +221,30 @@ header a:hover {
 	display: none;
 }
 
-.B1:hover {
-	background-color: #C5BE27;
+#C1 {
+	display: none;
 }
 
 .A1:hover  {
-	background-color: #C57927;
+	box-shadow: 0px 0px 10px #C57927;
 }
 
-.Select_A1_B1 {
+.B1:hover {
+	box-shadow: 0px 0px 10px #C5BE27;
+}
+
+.C1:hover  {
+	box-shadow: 0px 0px 10px #ff6600;
+}
+
+.Select_A1_B1_C1  {
 	top: 0px;
 	color: white;
 	margin-bottom: 10px;
 	padding: 15px;
 }
 
-.Select_A1_B1 h3 {
+.Select_A1_B1_C1 h3 {
 	font-size: 20px;
 }
 
@@ -272,4 +280,19 @@ header a:hover {
 	padding:10px;
 	color: white;
 	border-bottom: 1px solid #B4F56B;
+}
+
+.ico_tank {
+	background: url('../css/img/role_spe/tank.png') no-repeat center;
+	padding: 10px;
+}
+
+.ico_heal {
+	background: url('../css/img/role_spe/heal.png') no-repeat center ;
+	padding: 10px;
+}
+
+.ico_dps {
+	background: url('../css/img/role_spe/dps.png') no-repeat center;
+	padding: 10px;
 }
