@@ -1,7 +1,5 @@
 <?php include('config/db.php'); 
-if(isset($_POST['submitmodifier'])) {
-	echo"cc";	
-}
+
 ?>
 <form method="post">
 	<div class="col-md-12 add_news">
